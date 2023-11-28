@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Product</title>
+</head>
+<style>
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+</style>
+<body>
+	<div align="center">
+		<h1>Create New Product</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${product}"
+			method="post" >
+			<label ><b>Product Name:</b></label>&nbsp;&nbsp;&nbsp;
+			<input type="text" style="border-radius: 10px;padding:10px;"   size="40%" th:field="*{name}" /><br><br>
+			
+			<label><b>Brand:</b></label>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" size="40%" style="border-radius: 10px;padding:10px;"   th:field="*{brand}" /><br><br>
+			
+			<label><b>Made In:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" size="40%" style="border-radius: 10px;padding:10px;"    th:field="*{madein}" /><br><br>
+			
+			
+			<label> <b>Price:</b> </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" size="40%" th:field="*{price}"  style="border-radius: 10px;padding:10px;"/><br><br>
+
+		
+			<br><br>
+		<button type="submit" style="background-color: red; width: 20% ;height:30%; size:20;  align-self: center;border-radius:5px ;padding: 10px"><b>Save</b></button>
+		</form>
+		
+	</div>
+	<div style="text-align: center;">
+	<br><a href="/" class="button" >Product List</a>	
+	</div>
+</body>
+</html>
